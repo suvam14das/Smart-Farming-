@@ -40,7 +40,7 @@ yin = tf.placeholder('float')
 
 # read dataset
 
-df = pd.read_csv('FertPredictionDataset.csv') 
+df = pd.read_csv('FertPredictDataset.csv') 
 x = df.drop('class',1) 
 y = df['class']
 
@@ -158,19 +158,19 @@ def train_neural_network(xin):
 		predict = predict.eval({xin:example})
 		print("prediction : Fertilizer", label_encoder.inverse_transform(predict))
 		
-#plot loss vs no. of epochs
 
-			plt.figure()
-			plt.subplot(2,2,1)
-			plt.plot(eploss)
-			plt.ylabel('Loss')
-			plt.xlabel('Number of epochs')
-			plt.subplot(2,2,1)
-			plt.plot()
-			plt.title('Loss vs Number of epochs')
-			plt.ylabel('Loss')
-			plt.xlabel('Number of epochs')
-			plt.show()
+
+		plt.figure()
+		plt.subplot(2,2,1)
+		plt.plot(eploss)
+		plt.ylabel('Loss')
+		plt.xlabel('Number of epochs')
+		plt.subplot(2,2,1)
+		plt.plot()
+		plt.title('Loss vs Number of epochs')
+		plt.ylabel('Loss')
+		plt.xlabel('Number of epochs')
+		plt.show()
 
 train_neural_network(xin)  
 
